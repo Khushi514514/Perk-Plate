@@ -1,0 +1,179 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  body {
+    background-color: #3f2408;
+    color: #fff;
+  }
+  
+  /* Header Navigation */
+  header nav {
+    background-color: #212121;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  header nav h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  header nav form {
+    display: flex;
+    justify-content: center;
+  }
+  
+  form input[type="text"] {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  form input[type="text"], button[type="submit"] {
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  form button[type="submit"] {
+    background-color: #f44336;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  form button[type="submit"]:hover,
+  .recipe button:hover {
+    background-color: #fd6161;
+  }
+  
+  /* Recipe Container */
+  .recipe-container {
+    text-align: center;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    width: 80%;
+    margin: 10px auto;
+    padding: 20px;
+    place-items: center;
+  }
+  
+  /* Recipe Card */
+  .recipe {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(78, 73, 73, 0.1), -5px -5px 10px rgba(34, 34, 34, 0.5);
+    cursor: pointer;
+    max-width: 350px;
+  }
+  
+  .recipe img {
+    height: 300px;
+  }
+  
+  .recipe h3 {
+    font-size: 24px;
+    margin-block: 5px;
+  }
+  
+  .recipe p {
+    font-size: 20px;
+    color: #4a4a4a;
+    margin: 5px 0;
+  }
+  
+  .recipe span {
+    font-weight: 600;
+  }
+  
+  .recipe button {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 18px auto;
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  /* Recipe Details Popup */
+  .recipe-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #7b4914;
+    border-radius: 12px;
+    width: 40%;
+    height: 60%;
+    padding: 20px; /* Added padding for spacing inside the popup */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    text-align: center; /* Centered text inside the popup */
+    font-size: 18px; /* Adjusted font size for readability */
+  }
+  
+  .recipe-details ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove margin */
+  }
+  
+  .recipe-details li {
+    margin: 5px 0; /* Add spacing between list items */
+    text-align: left; /* Align ingredients to the left for better readability */
+  }
+  
+  /* Recipe Close Button */
+  .recipe-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .recipe-close-btn:hover {
+    color: #f44336;
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 600px) {
+    header nav {
+      flex-direction: column;
+    }
+  
+    header nav form {
+      width: 80%;
+      margin-top: 20px;
+    }
+  
+    .recipe-details {
+      width: 80%; /* Increase width for smaller screens */
+      height: auto; /* Let height adjust based on content */
+    }
+  
+    .recipe {
+      max-width: 100%; /* Ensure recipe cards take full width on small screens */
+    }
+  }
